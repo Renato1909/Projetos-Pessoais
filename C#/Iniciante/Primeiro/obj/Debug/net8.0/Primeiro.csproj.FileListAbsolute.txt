@@ -1,0 +1,14 @@
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\bin\Debug\net8.0\Primeiro.exe
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\bin\Debug\net8.0\Primeiro.deps.json
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\bin\Debug\net8.0\Primeiro.runtimeconfig.json
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\bin\Debug\net8.0\Primeiro.dll
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\bin\Debug\net8.0\Primeiro.pdb
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\obj\Debug\net8.0\Primeiro.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\obj\Debug\net8.0\Primeiro.AssemblyInfoInputs.cache
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\obj\Debug\net8.0\Primeiro.AssemblyInfo.cs
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\obj\Debug\net8.0\Primeiro.csproj.CoreCompileInputs.cache
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\obj\Debug\net8.0\Primeiro.dll
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\obj\Debug\net8.0\refint\Primeiro.dll
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\obj\Debug\net8.0\Primeiro.pdb
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\obj\Debug\net8.0\Primeiro.genruntimeconfig.cache
+D:\Projetos Pessoais\C#\Iniciante\Primeiro\obj\Debug\net8.0\ref\Primeiro.dll
