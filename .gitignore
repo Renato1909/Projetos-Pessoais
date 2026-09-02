@@ -1,0 +1,12 @@
+PHP/06-mini-blog/posts.json
+# C#
+bin/
+obj/
+# Node/TS
+node_modules/
+dist/
+# Go
+*.exe
+# Python
+__pycache__/
+.venv/
