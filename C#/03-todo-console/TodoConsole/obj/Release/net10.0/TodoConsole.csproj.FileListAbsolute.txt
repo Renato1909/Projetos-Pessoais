@@ -1,0 +1,15 @@
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\bin\Release\net10.0\TodoConsole.exe
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\bin\Release\net10.0\TodoConsole.deps.json
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\bin\Release\net10.0\TodoConsole.runtimeconfig.json
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\bin\Release\net10.0\TodoConsole.dll
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\bin\Release\net10.0\TodoConsole.pdb
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\obj\Release\net10.0\TodoConsole.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\obj\Release\net10.0\TodoConsole.AssemblyInfoInputs.cache
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\obj\Release\net10.0\TodoConsole.AssemblyInfo.cs
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\obj\Release\net10.0\TodoConsole.csproj.CoreCompileInputs.cache
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\obj\Release\net10.0\TodoConsole.sourcelink.json
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\obj\Release\net10.0\TodoConsole.dll
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\obj\Release\net10.0\refint\TodoConsole.dll
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\obj\Release\net10.0\TodoConsole.pdb
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\obj\Release\net10.0\TodoConsole.genruntimeconfig.cache
+D:\Dev\portfolio\Projetos-Pessoais\C#\03-todo-console\TodoConsole\obj\Release\net10.0\ref\TodoConsole.dll
