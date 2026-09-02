@@ -1,0 +1,14 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>JS Calculadora DOM</title>
+<style>body{font-family:system-ui;max-width:360px;margin:40px auto}input,select,button{padding:8px;margin:4px}</style>
+<h1>JS/02 - Calculadora DOM</h1>
+<input id="a" placeholder="A" type="number"> <select id="op"><option>+</option><option>-</option><option>*</option><option>/</option></select> <input id="b" placeholder="B" type="number">
+<button onclick="calc()">=</button> <span id="r"></span>
+<script>
+function calc(){
+  const a=parseFloat(document.getElementById('a').value), b=parseFloat(document.getElementById('b').value), op=document.getElementById('op').value;
+  let v; switch(op){case '+':v=a+b;break;case '-':v=a-b;break;case '*':v=a*b;break;case '/':v=b? a/b : 'Erro: /0';break;}
+  document.getElementById('r').textContent = v;
+}
+</script>
