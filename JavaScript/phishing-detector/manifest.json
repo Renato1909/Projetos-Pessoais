@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Detector de Phishing (estudo defensivo)",
+  "version": "0.1.0",
+  "description": "Analisa a URL da pagina com heuristicas locais e alerta sobre sinais de phishing. Nada sai do navegador.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "action": {
+    "default_title": "Verificar esta pagina",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["heuristics.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
