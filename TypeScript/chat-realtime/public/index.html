@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Chat Realtime TS</title>
+<style>body{font-family:system-ui;max-width:640px;margin:32px auto} #log{border:1px solid #ddd;height:320px;overflow:auto;padding:8px} .me{color:#0a0} .sys{color:#888;font-style:italic}</style>
+<h1>Chat Realtime (WS + SQLite)</h1>
+<div><input id="room" value="geral" placeholder="sala"> <input id="user" value="anon" placeholder="usuário"> <button id="join">Entrar</button></div>
+<div id="log"></div>
+<div><input id="text" placeholder="mensagem" style="width:80%"> <button id="send">Enviar</button></div>
+<script>
+let ws;
+const log = document.getElementById('log');
+function add(t, cls=''){ const d=document.createElement('div'); d.textContent=t; if(cls) d.className=cls; log.appendChild(d); log.scrollTop=log.scrollHeight; }
+document.getElementById('join').onclick = () => {
+  const room=document.getElementById('room').value||'geral', user=document.getElementById('user').value||'anon';
+  ws?.close();
+  ws=new WebSocket(`ws://${location.host}?room=${encodeURIComponent(room)}&user=${encodeURIComponent(user)}`);
+  ws.onmessage = e => {
+    const m=JSON.parse(e.data);
+    if(m.type==='history') m.messages.forEach(x=> add(`[${x.ts.slice(11,19)}] ${x.user}: ${x.text}`));
+    else if(m.type==='message') add(`[${m.ts.slice(11,19)}] ${m.user}: ${m.text}`, m.user===user?'me':'');
+    else if(m.type==='join') add(`${m.user} entrou`, 'sys');
+    else if(m.type==='leave') add(`${m.user} saiu`, 'sys');
+  };
+  add(`Conectado em #${room} como ${user}`, 'sys');
+};
+document.getElementById('send').onclick = () => {
+  const t=document.getElementById('text').value.trim(); if(!t||!ws||ws.readyState!==1) return;
+  ws.send(JSON.stringify({type:'message', text:t})); document.getElementById('text').value='';
+};
+document.getElementById('text').addEventListener('keydown', e=>{ if(e.key==='Enter') document.getElementById('send').click(); });
+</script>
