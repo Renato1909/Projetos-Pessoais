@@ -1,14 +1,59 @@
 # Projetos-Pessoais
-Projetos pessoais nas mais variadas linguagens, dando foco às mais simples e que tenham envolvimento com meus projetos escolares (HTML, CSS, JavaScript, Python, C++, C#, C, TypeScript e PHP).
 
-## Estrutura
-- `C/Iniciante` + `02-calculadora-cli` `03-jogo-adivinhacao` `04-conversor-temperatura`
-- `C++/Iniciante` (calculadora) — próximo: biblioteca com classes
-- `C#/Iniciante` + `02-calculadora-poo` `03-todo-console`
-- `Python/Bot Simples` `To-do List`
-- `PHP/02→07` — trilha completa (calculadora, tabuada, lista, form, blog JSON, login)
-- `TypeScript/02-calculadora` `03-todo-cli` `04-fetch-api`
-- `JavaScript/02-dom-calculadora`
-- `Go/02-calculadora` `03-http-hello`
+Repositório central para projetos pessoais de programação em diferentes linguagens. Cada projeto permanece em sua própria pasta, com código, testes, dependências e instruções de execução quando disponíveis.
 
-Rodar exemplos: `gcc`, `dotnet run`, `npx tsx`, `go run`, `php -S localhost:8000` dentro de cada pasta.
+## Projetos por linguagem
+
+### C
+- [Servidor HTTP](C/http-server/) — servidor HTTP/1.1 com implementação própria, interface estática e testes.
+
+### Go
+- [URL Shortener](Go/url-shortener/) — API REST para encurtamento de URLs, armazenamento SQLite, cache e testes.
+- [Calculadora](Go/02-calculadora/)
+- [HTTP Hello](Go/03-http-hello/)
+
+### Python
+- [Tasks API](Python/tasks-api/) — API de tarefas com autenticação e testes.
+- [Password Strength Analyzer](Python/password-strength-analyzer/) — análise defensiva de robustez de senhas.
+- [LAN Scanner](Python/lan-scanner/) — scanner restrito a redes IPv4 privadas.
+- [Bot Simples](Python/Bot%20Simples/)
+- [To-do List](Python/To-do%20List/)
+
+### TypeScript
+- [Chat em tempo real](TypeScript/chat-realtime/) — servidor e cliente web, com testes.
+- [Calculadora](TypeScript/02-calculadora/)
+- [To-do CLI](TypeScript/03-todo-cli/)
+- [Fetch API](TypeScript/04-fetch-api/)
+
+### JavaScript
+- [Detector de phishing](JavaScript/phishing-detector/) — extensão de navegador com heurísticas locais.
+- [Calculadora DOM](JavaScript/02-dom-calculadora/)
+
+### C#
+- [Calculadora com POO](C%23/02-calculadora-poo/)
+- [To-do Console](C%23/03-todo-console/)
+- [Exercícios iniciais](C%23/Iniciante/)
+
+### C++
+- [Biblioteca com classes](C%2B%2B/02-biblioteca-classes/)
+- [Jogo da forca](C%2B%2B/03-jogo-forca/)
+- [Exercícios iniciais](C%2B%2B/Iniciante/)
+
+### PHP
+- [Calculadora](PHP/02-calculadora/)
+- [Tabuada](PHP/03-tabuada/)
+- [Lista de compras](PHP/04-lista-compras/)
+- [Formulário de contato](PHP/05-form-contato/)
+- [Mini blog](PHP/06-mini-blog/)
+- [Login e sessão](PHP/07-login-sessao/)
+
+## Como executar
+
+As instruções específicas estão no README de cada projeto. Entre na pasta correspondente e siga os requisitos da linguagem, como go run, dotnet run, npm install/npm test, pytest, php -S localhost:8000 ou compilação com GCC, conforme aplicável.
+
+## Organização
+
+- Projetos independentes ficam em subpastas próprias.
+- Cada projeto deve manter seus testes, licença e instruções de execução.
+- Evite versionar saídas de compilação, dependências instaladas, segredos ou arquivos locais de IDE.
+- Projetos acadêmicos maiores e trabalhos que precisam de repositório próprio permanecem separados.
