@@ -1,6 +1,6 @@
 # phishing-detector
 
-![CI](https://github.com/Renato1909/phishing-detector/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Renato1909/Projetos-Pessoais/actions/workflows/projetos-consolidados.yml/badge.svg)
 
 Extensão de navegador (Manifest V3) **defensiva** que analisa a URL da página
 com heurísticas **100% locais** e exibe um alerta quando há sinais de phishing.
@@ -42,6 +42,13 @@ node --test tests/heuristics.test.js
 - Marcas oficiais cobertas são uma lista curta de exemplo.
 - Golpistas evoluem; listas locais nunca substituem bom senso + 2FA.
 
+## Localização neste repositório
+
+Este projeto está em `JavaScript/Seguranca/phishing-detector/`. A partir da raiz de `Projetos-Pessoais`, execute `cd JavaScript/Seguranca/phishing-detector` antes de utilizar os comandos acima.
+
+A integração contínua é definida no [workflow compartilhado](../../../.github/workflows/projetos-consolidados.yml), com execução no diretório deste projeto. O [repositório de origem](https://github.com/Renato1909/phishing-detector) permanece preservado. Consulte o [registro de consolidação](../../../docs/CONSOLIDACAO.md) para conhecer o escopo desta organização.
+
 ## Licença
 
 [MIT](LICENSE)
+

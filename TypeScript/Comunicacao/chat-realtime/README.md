@@ -1,6 +1,6 @@
 # chat-realtime-ts
 
-![CI](https://github.com/Renato1909/chat-realtime-ts/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Renato1909/Projetos-Pessoais/actions/workflows/projetos-consolidados.yml/badge.svg)
 ![Node](https://img.shields.io/badge/Node-24%2B-339933)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6)
 ![SQLite](https://img.shields.io/badge/SQLite-node%3Asqlite-lightgrey)
@@ -9,7 +9,7 @@ Chat em **tempo real** com **WebSockets** (`ws`), salas, histórico persistido e
 
 ## Destaques técnicos
 
-- **WS por sala** (`?room=geral&user=anon`) com `join/leave` + `broadcast` isolado
+- **WS por sala** (`?room=geral&user=anon`) com `join/leave` + `broadcast` isolados
 - **Persistência** `DatabaseSync` sem dependência nativa (sem `better-sqlite3`/`node-gyp`)
 - **REST** `GET /api/history/:room` + `GET /health`
 - **Front vanilla** `public/index.html` consome WS direto
@@ -67,6 +67,13 @@ tests/
 - [ ] Paginação `/api/history?limit&before`
 - [ ] Métricas `/metrics`
 
+## Localização neste repositório
+
+Este projeto está em `TypeScript/Comunicacao/chat-realtime/`. A partir da raiz de `Projetos-Pessoais`, execute `cd TypeScript/Comunicacao/chat-realtime` antes de utilizar os comandos acima.
+
+A integração contínua é definida no [workflow compartilhado](../../../.github/workflows/projetos-consolidados.yml), com execução no diretório deste projeto. O [repositório de origem](https://github.com/Renato1909/chat-realtime-ts) permanece preservado. Consulte o [registro de consolidação](../../../docs/CONSOLIDACAO.md) para conhecer o escopo desta organização.
+
 ## Licença
 
 [MIT](LICENSE)
+

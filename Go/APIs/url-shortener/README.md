@@ -1,7 +1,7 @@
 # url-shortener-go
 
-![CI](https://github.com/Renato1909/url-shortener-go/actions/workflows/ci.yml/badge.svg)
-![Go](https://img.shields.io/badge/Go-1.22%2B-00ADD8)
+![CI](https://github.com/Renato1909/Projetos-Pessoais/actions/workflows/projetos-consolidados.yml/badge.svg)
+![Go](https://img.shields.io/badge/Go-1.26.7-00ADD8)
 ![Banco](https://img.shields.io/badge/SQLite-WAL-blue)
 
 API REST de **encurtador de URLs** escrita em Go puro, com contador de cliques,
@@ -48,7 +48,7 @@ curl -s http://localhost:8080/aB3x9Kp/stats
 
 ## Como rodar
 
-Requisitos: Go 1.22+
+Requisitos: versão do Go indicada em [go.mod](go.mod) (atualmente 1.26.7).
 
 ```powershell
 go run ./cmd/server                 # porta padrão 8080, banco em data/shortener.db
@@ -56,11 +56,11 @@ go run ./cmd/server                 # porta padrão 8080, banco em data/shortene
 
 Variáveis de ambiente opcionais:
 
-| Variável   | Padrão                    | Descrição                        |
+| Variável | Padrão | Descrição |
 |------------|---------------------------|----------------------------------|
-| `PORT`     | `8080`                    | Porta HTTP                       |
-| `DB_PATH`  | `data/shortener.db`       | Caminho do SQLite                |
-| `BASE_URL` | `http://localhost:$PORT`  | Base dos links encurtados        |
+| `PORT` | `8080` | Porta HTTP |
+| `DB_PATH` | `data/shortener.db` | Caminho do SQLite |
+| `BASE_URL` | `http://localhost:$PORT` | Base dos links encurtados |
 
 ## Como testar
 
@@ -111,6 +111,13 @@ GET /{code} → cache hit? ──sim──► Location + clicks++
 - [ ] Métricas Prometheus (`/metrics`)
 - [ ] Dockerfile multi-stage + deploy
 
+## Localização neste repositório
+
+Este projeto está em `Go/APIs/url-shortener/`. A partir da raiz de `Projetos-Pessoais`, execute `cd Go/APIs/url-shortener` antes de utilizar os comandos acima.
+
+A integração contínua é definida no [workflow compartilhado](../../../.github/workflows/projetos-consolidados.yml), com execução no diretório deste projeto. O [repositório de origem](https://github.com/Renato1909/url-shortener-go) permanece preservado. Consulte o [registro de consolidação](../../../docs/CONSOLIDACAO.md) para conhecer o escopo desta organização.
+
 ## Licença
 
 [MIT](LICENSE)
+

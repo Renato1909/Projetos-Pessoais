@@ -1,6 +1,6 @@
 # tasks-api-py
 
-![CI](https://github.com/Renato1909/tasks-api-py/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Renato1909/Projetos-Pessoais/actions/workflows/projetos-consolidados.yml/badge.svg)
 ![Python](https://img.shields.io/badge/Python-3.12%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.111%2B-009688)
 ![SQLite](https://img.shields.io/badge/SQLite-async-lightgrey)
@@ -125,6 +125,12 @@ GET  /api/tasks     → Authorization: Bearer <token> → 200 + list[TaskRead]
 - [ ] Paginação (`limit`/`offset`) + ordenação
 - [ ] Métricas Prometheus (`/metrics`)
 - [ ] Dockerfile multi-stage + deploy example
+
+## Localização neste repositório
+
+Este projeto está em `Python/APIs/tasks-api/`. A partir da raiz de `Projetos-Pessoais`, execute `cd Python/APIs/tasks-api` antes de utilizar os comandos acima.
+
+A integração contínua é definida no [workflow compartilhado](../../../.github/workflows/projetos-consolidados.yml), com execução no diretório deste projeto. O [repositório de origem](https://github.com/Renato1909/tasks-api-py) permanece preservado. Consulte o [registro de consolidação](../../../docs/CONSOLIDACAO.md) para conhecer o escopo desta organização.
 
 ## Licença
 

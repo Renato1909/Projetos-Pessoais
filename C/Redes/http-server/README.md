@@ -1,6 +1,6 @@
 # c-http-server
 
-![CI](https://github.com/Renato1909/http-server-c/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Renato1909/Projetos-Pessoais/actions/workflows/projetos-consolidados.yml/badge.svg)
 ![Linguagem](https://img.shields.io/badge/C-11-blue)
 ![Plataforma](https://img.shields.io/badge/plataforma-Windows-lightgrey)
 
@@ -120,6 +120,13 @@ main.c ──► server.c ──► accept() loop
 - [ ] Porta para Linux (BSD sockets) com build via CMake
 - [ ] Benchmark comparativo (wrk) antes/depois do pool
 
+## Localização neste repositório
+
+Este projeto está em `C/Redes/http-server/`. A partir da raiz de `Projetos-Pessoais`, execute `cd C/Redes/http-server` antes de utilizar os comandos acima.
+
+A integração contínua é definida no [workflow compartilhado](../../../.github/workflows/projetos-consolidados.yml), com execução no diretório deste projeto. O [repositório de origem](https://github.com/Renato1909/http-server-c) permanece preservado. Consulte o [registro de consolidação](../../../docs/CONSOLIDACAO.md) para conhecer o escopo desta organização.
+
 ## Licença
 
 [MIT](LICENSE)
+

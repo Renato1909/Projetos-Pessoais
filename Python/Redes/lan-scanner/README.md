@@ -1,6 +1,6 @@
 # lan-scanner
 
-![CI](https://github.com/Renato1909/lan-scanner/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Renato1909/Projetos-Pessoais/actions/workflows/projetos-consolidados.yml/badge.svg)
 ![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
 
 Scanner **defensivo** da **própria rede local**: descobre hosts ativos e lista
@@ -53,6 +53,13 @@ pytest -v
 Os testes são herméticos (validação de alvos + listener local em `127.0.0.1`),
 não tocam em rede real.
 
+## Localização neste repositório
+
+Este projeto está em `Python/Redes/lan-scanner/`. A partir da raiz de `Projetos-Pessoais`, execute `cd Python/Redes/lan-scanner` antes de utilizar os comandos acima.
+
+A integração contínua é definida no [workflow compartilhado](../../../.github/workflows/projetos-consolidados.yml), com execução no diretório deste projeto. O [repositório de origem](https://github.com/Renato1909/lan-scanner) permanece preservado. Consulte o [registro de consolidação](../../../docs/CONSOLIDACAO.md) para conhecer o escopo desta organização.
+
 ## Licença
 
 [MIT](LICENSE)
+

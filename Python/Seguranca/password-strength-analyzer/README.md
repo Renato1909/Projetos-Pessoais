@@ -1,6 +1,6 @@
 # password-strength-analyzer
 
-![CI](https://github.com/Renato1909/password-strength-analyzer/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Renato1909/Projetos-Pessoais/actions/workflows/projetos-consolidados.yml/badge.svg)
 ![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
 
 Analisador **defensivo** de força de senhas: entropia, tempo estimado de quebra,
@@ -47,6 +47,13 @@ pytest -v
   com palavras reais têm entropia efetiva menor.
 - Tempos de quebra são ordens de grandeza, não garantias.
 
+## Localização neste repositório
+
+Este projeto está em `Python/Seguranca/password-strength-analyzer/`. A partir da raiz de `Projetos-Pessoais`, execute `cd Python/Seguranca/password-strength-analyzer` antes de utilizar os comandos acima.
+
+A integração contínua é definida no [workflow compartilhado](../../../.github/workflows/projetos-consolidados.yml), com execução no diretório deste projeto. O [repositório de origem](https://github.com/Renato1909/password-strength-analyzer) permanece preservado. Consulte o [registro de consolidação](../../../docs/CONSOLIDACAO.md) para conhecer o escopo desta organização.
+
 ## Licença
 
 [MIT](LICENSE)
+
