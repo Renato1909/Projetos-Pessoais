@@ -30,3 +30,16 @@ credentials
 credentials.json
 service-account*.json
 *.kdbx
+
+# Artefactos de compilacao e IDE (nunca vao para o repositorio).
+bin/
+obj/
+target/
+__pycache__/
+*.exe
+*.dll
+*.pdb
+*.o
+*.obj
+*.class
+.vs/
