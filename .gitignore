@@ -33,6 +33,9 @@ service-account*.json
 
 # Artefactos de compilacao e IDE (nunca vao para o repositorio).
 bin/
+# Excepcao: `src/bin/` em Rust e codigo-fonte dos binarios do crate, nao saida de
+# compilacao; a regra de cima (bin/ de C#/dotnet) tapava o medir.rs da trilha.
+!Rust/Algoritmos/src/bin/
 obj/
 target/
 build/

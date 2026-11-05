@@ -1,0 +1,7 @@
+[package]
+name = "algoritmos"
+version = "0.1.0"
+edition = "2024"
+description = "Trilha de algoritmos e logica de programacao: os mesmos exercicios em Rust"
+license = "MIT"
+publish = false
