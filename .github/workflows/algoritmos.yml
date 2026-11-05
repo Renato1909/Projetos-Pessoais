@@ -1,0 +1,162 @@
+name: Validacao da trilha de algoritmos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*/Algoritmos/**'
+      - '.github/workflows/algoritmos.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - '*/Algoritmos/**'
+      - '.github/workflows/algoritmos.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  python:
+    name: Python / temas de algoritmos
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar pytest
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+      - name: Testar e medir cada tema
+        run: |
+          shopt -s nullglob
+          celulas=(Python/Algoritmos/*/)
+          if [ "${#celulas[@]}" = 0 ]; then
+            echo "Nenhum tema Python nesta revisao; nada a validar."
+            exit 0
+          fi
+          for celula in "${celulas[@]}"; do
+            tema=$(basename "$celula")
+            if [ ! -d "$celula/tests" ]; then
+              echo "::error::$tema nao tem pasta tests/."
+              exit 1
+            fi
+            echo "::group::$tema"
+            (cd "$celula" && python -m pytest -q)
+            if [ -f medir.py ]; then python medir.py; fi
+            echo "::endgroup::"
+          done
+
+  go:
+    name: Go / temas de algoritmos
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verificar Go disponivel no runner
+        run: go version
+      - name: Analise estatica, testes com race e medicoes
+        run: |
+          if [ ! -f Go/Algoritmos/go.mod ]; then
+            echo "Nenhum tema Go nesta revisao; nada a validar."
+            exit 0
+          fi
+          nao_formatados=$(gofmt -l Go/Algoritmos)
+          if [ -n "$nao_formatados" ]; then
+            echo "::error::gofmt pendente:"
+            echo "$nao_formatados"
+            exit 1
+          fi
+          cd Go/Algoritmos
+          go vet ./...
+          go test -race ./...
+          go test -run '^$' -bench . -benchtime 100000x ./...
+
+  c:
+    name: C / temas de algoritmos
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Compilar, testar e medir cada tema
+        run: |
+          shopt -s nullglob
+          celulas=(C/Algoritmos/*/)
+          if [ "${#celulas[@]}" = 0 ]; then
+            echo "Nenhum tema C nesta revisao; nada a validar."
+            exit 0
+          fi
+          for celula in "${celulas[@]}"; do
+            tema=$(basename "$celula")
+            if [ ! -f "$celula/Makefile" ]; then
+              echo "::error::$tema nao tem Makefile."
+              exit 1
+            fi
+            echo "::group::$tema"
+            make -C "$celula" test
+            make -C "$celula" bench
+            echo "::endgroup::"
+          done
+
+  c-sanitizadores:
+    name: C / AddressSanitizer e UBSan
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Testar com sanitizadores
+        run: |
+          shopt -s nullglob
+          celulas=(C/Algoritmos/*/)
+          if [ "${#celulas[@]}" = 0 ]; then
+            echo "Nenhum tema C nesta revisao; nada a validar."
+            exit 0
+          fi
+          for celula in "${celulas[@]}"; do
+            tema=$(basename "$celula")
+            [ -f "$celula/Makefile" ] || { echo "::error::$tema nao tem Makefile."; exit 1; }
+            echo "::group::$tema"
+            make -C "$celula" clean
+            make -C "$celula" SANITIZE='-fsanitize=address,undefined -fno-omit-frame-pointer' test
+            echo "::endgroup::"
+          done
+
+  rust:
+    name: Rust / trilha de algoritmos
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Formatacao, lint, testes e medicao
+        run: |
+          if [ ! -f Rust/Algoritmos/Cargo.toml ]; then
+            echo "Nenhum crate Rust nesta revisao; nada a validar."
+            exit 0
+          fi
+          cd Rust/Algoritmos
+          rustup component add clippy rustfmt
+          cargo fmt --check
+          cargo clippy --all-targets -- --deny warnings
+          cargo test
+          cargo run --release --bin medir

@@ -6,6 +6,10 @@ Repositório central para projetos pessoais de programação em diferentes lingu
 
 Os sete projetos técnicos consolidados seguem o padrão `Linguagem/Area/Projeto/`: **APIs**, **Redes**, **Seguranca** e **Comunicacao**. Cada projeto mantém seu código, dependências, testes e licença. Exercícios e demais projetos permanecem nos caminhos anteriores nesta etapa.
 
+## Trilha de algoritmos
+
+Além dos projetos, o repositório mantém uma trilha de exercícios de lógica e estrutura de dados em `Linguagem/Algoritmos/<tema>/`, com o mesmo exercício escrito em Python, Go, C e Rust para que a comparação entre linguagens seja o ponto. O índice de temas, a explicação de cada um, os comandos de execução e o critério das medições estão em [docs/ALGORITMOS.md](docs/ALGORITMOS.md).
+
 ## Projetos por linguagem
 
 ### C
@@ -67,6 +71,8 @@ As instruções específicas estão no README de cada projeto. Entre na pasta co
 O [workflow dos projetos consolidados](.github/workflows/projetos-consolidados.yml) fica na raiz do repositório, como exigido pelo GitHub Actions. Ele valida os sete projetos em jobs separados, com diretórios de trabalho específicos, ao abrir ou atualizar PRs para `main`, após pushes em `main` que afetem esses projetos ou por execução manual.
 
 A compilação do servidor HTTP utiliza Windows/MinGW-w64. O encurtador usa a versão declarada no seu `go.mod`; os projetos Python usam Python 3.12 no CI, e os projetos JavaScript/TypeScript usam Node.js 24. Execute os comandos locais sempre a partir da pasta do projeto, não da raiz deste repositório.
+
+A trilha de algoritmos é validada por um segundo workflow, [algoritmos.yml](.github/workflows/algoritmos.yml), disparado apenas por mudanças em `*/Algoritmos/**`. Ele corre testes de cada tema em Python, `go vet` com detector de concorrência em Go, `make test` e `make bench` em C, uma segunda pasada de C com AddressSanitizer e UBSan, e `cargo fmt`/`clippy --deny warnings`/`cargo test` em Rust. Os dois workflows são independentes: mexer na trilha não revalida os projetos consolidados, e vice-versa.
 
 ## Proveniência e escopo
 
